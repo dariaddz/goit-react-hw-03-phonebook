@@ -1,0 +1,29 @@
+.list {
+  width: 300px;
+  padding-left: 0;
+}
+
+.element {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.delete {
+  margin-left: 15px;
+  width: 50px;
+  border: 2px solid darkblue;
+  border-radius: 3px;
+  background-color: rgb(133, 133, 211);
+  opacity: 0.8;
+}
+.delete:active {
+  box-shadow: 0 2px #666;
+}
+
+.delete:hover,
+.delete:focus {
+  opacity: 1;
+  color: azure;
+  font-weight: 600;
+  transform: scale(1.1);
+}

@@ -1,0 +1,37 @@
+form {
+  border: 2px solid darkblue;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  margin-top: 20px;
+  padding: 5px;
+  width: 100px;
+  border: 2px solid darkblue;
+  border-radius: 3px;
+  background-color: rgb(133, 133, 211);
+  opacity: 0.8;
+  font-weight: 600;
+}
+.button:active {
+  box-shadow: 0 5px #666;
+}
+
+.button:hover,
+.button:focus {
+  opacity: 1;
+  color: azure;
+  font-weight: 600;
+}
