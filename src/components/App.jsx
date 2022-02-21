@@ -17,6 +17,21 @@ class App extends React.Component  {
    filter:''
   }
   
+  componentDidMount() { 
+    const contacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(contacts);
+    if (parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
+  }
+
+ componentDidUpdate(prevProps,prevState) { 
+   if (this.state.contacts !== prevState.cntacts) { 
+localStorage.setItem("contacts", JSON.stringify(this.state.contacts))
+    
+   }
+  }
+
   addContact = ({ name, number }) => {
     const contact = {
       id: nanoid(),
@@ -82,3 +97,30 @@ class App extends React.Component  {
 };
 
 export default App
+
+  // componentDidMount() {
+  //   // console.log('App componentDidMount');
+
+  //   const todos = localStorage.getItem('todos');
+  //   const parsedTodos = JSON.parse(todos);
+
+  //   if (parsedTodos) {
+  //     this.setState({ todos: parsedTodos });
+  //   }
+  // }
+
+  // componentDidUpdate(prevProps, prevState) {
+  //   // console.log('App componentDidUpdate');
+
+  //   const nextTodos = this.state.todos;
+  //   const prevTodos = prevState.todos;
+
+  //   if (nextTodos !== prevTodos) {
+  //     console.log('Обновилось поле todos, записываю todos в хранилище');
+  //     localStorage.setItem('todos', JSON.stringify(nextTodos));
+  //   }
+
+  //   if (nextTodos.length > prevTodos.length && prevTodos.length !== 0) {
+  //     this.toggleModal();
+  //   }
+  // }
